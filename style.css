@@ -147,6 +147,27 @@ body {
   font-size: 1.5rem;
 }
 
+
+
+.filtros{
+  width: 80%;
+  margin-left: 6%;
+  margin-bottom: 20px;
+  /* display: flex; */
+  /* justify-content: space-around; */
+  /* margin-inline: 5%; */
+  
+}
+
+.filtros select{
+  background-color: var(--dark-color);
+  border: 1px solid var(--gray2-color);
+  border-radius: 5px;
+  color: var(--gray2-color);
+  font-size: .8rem;
+  margin-right: 2px;
+}
+
 /* 
 category__icon__container
 
@@ -165,6 +186,8 @@ category__name
   background-color: #000;
   color: #ffc107;
 } */
+
+
 
 
 @media (orientation: landscape) {

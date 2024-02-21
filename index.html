@@ -29,6 +29,33 @@
       <h1>Selecione as categorias</h1>
       <p>Escolha quantas categorias quiser e nós vamos sortear uma atividade de acordo com sua seleção.</p>
     </div>
+
+    
+    <div class="filtros">
+      <select name="selectCusto" id="selectCusto">
+        <option value="all" selected>Custo </option>
+        <option value="1" >$</option>
+        <option value="2">$$</option>
+        <option value="3">$$$</option>
+      </select>
+      <select name="selectTempo" id="selectTempo">
+        <option value="all" selected>Tempo</option>
+        <option value="40min" >40min</option>
+        <option value="1h-3h">1h-3h </option>
+        <option value="4h+">4h+</option>
+      </select>
+        <select name="selectPessoas" id="selectPessoas">
+        <option value="all" selected>Pessoas</option>
+        <option value="sozinho">Sozinho</option>
+        <option value="casal" >Casal</option>
+        <option value="grupo">Grupo</option>
+      </select>
+      <select name="selectLocal" id="selectLocal">
+        <option value="all" selected>Onde</option>
+        <option value="atHome" >Em casa</option>
+        <option value="goingOut">Fora</option>
+      </select>
+    </div>
     
     <div id="categoriasContainer"></div>
     <div id="sortearContainer" class="d-flex flex-wrap justify-content-center justify-content-lg-center">

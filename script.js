@@ -159,11 +159,62 @@ sortearButton = document.getElementById("sortearButton")
 sortearButton.addEventListener("click", () => {
   if(categoriasSelect.length > 0){
     let filteredList = data.filter((atividade)=>categoriasSelect.includes(atividade.categoria))
-    let filteredAct = filteredList.at(getRandomInt(filteredList.length)).nome
-    let filteredCat = data.filter((atividade)=>atividade.nome==filteredAct)[0].categoria
-    atividadeNome.className = "atividade__selected"
-    atividadeNome.innerText = filteredAct
-    categoriaAtividade.innerText = "["+filteredCat+"]"
+
+
+    // FILTROS
+    const selectCusto = document.getElementById("selectCusto");
+    let custo = selectCusto.value
+    const selectTempo = document.getElementById("selectTempo");
+    let tempo = selectTempo.value
+    const selectPessoas = document.getElementById("selectPessoas");
+    let pessoas = selectPessoas.value
+    const selectLocal = document.getElementById("selectLocal");
+    let local = selectLocal.value
+
+    let filteredListCusto
+    let filteredListTempo
+    let filteredListPessoas
+    let filteredListLocal
+    
+    if(custo == "all"){
+      filteredListCusto = filteredList
+    } else {
+      filteredListCusto = filteredList.filter((atividade)=>atividade.quanto == custo)
+    }
+    if(tempo == "all"){
+      filteredListTempo = filteredListCusto
+    } else {
+      filteredListTempo = filteredListCusto.filter((atividade)=>atividade.tempo == tempo)
+    }
+    if(pessoas == "all"){
+      filteredListPessoas = filteredListTempo
+    } else {
+      filteredListPessoas = filteredListTempo.filter((atividade)=>atividade.pessoas.includes(pessoas))
+    }
+    if(local == "all"){
+      filteredListLocal = filteredListPessoas
+    } else {
+      filteredListLocal = filteredListPessoas.filter((atividade)=>atividade.onde.includes(local))
+    }
+
+    let filteredListFinal = filteredListLocal
+    // ERRO !!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // qndo tem apenas 1 item, ele fica como um obj dentro do obj, por isso nao lê
+    // exemplo: comer - custo 3
+  
+
+    if(filteredListFinal.length > 0){
+      let filteredAct = filteredListFinal.at(getRandomInt(filteredListFinal.length-1)).nome
+      let filteredCat = data.filter((atividade)=>atividade.nome==filteredAct)[0].categoria
+      atividadeNome.className = "atividade__selected"
+      atividadeNome.innerText = filteredAct
+      categoriaAtividade.innerText = "["+filteredCat+"]"
+    } else {
+      atividadeNome.innerText = "Nenhuma atividade deu match com seus filtros"
+      categoriaAtividade.innerText = "tente ser menos criteriose"
+    }
+    
+    
 
   } else {
     atividadeNome.className = "atividade__empty"
