@@ -160,15 +160,15 @@ sortearButton.addEventListener("click", () => {
   if(categoriasSelect.length > 0){
     let filteredList = data.filter((atividade)=>categoriasSelect.includes(atividade.categoria))
     let filteredAct = filteredList.at(getRandomInt(filteredList.length)).nome
-    let filteredCat = data.filter((atividade)=>atividade.nome==filteredAct)[0].categoria
+    // let filteredCat = filteredList.at(getRandomInt(filteredList.length)).categoria
     atividadeNome.className = "atividade__selected"
     atividadeNome.innerText = filteredAct
-    categoriaAtividade.innerText = "["+filteredCat+"]"
-
+    // categoriaAtividade.innerText = filteredCat
+    
+    // console.log(filteredAct)
   } else {
     atividadeNome.className = "atividade__empty"
     atividadeNome.innerText = "Selecione pelo menos 1 categoria antes de escolher o date"
-    categoriaAtividade.innerText = ""
   } 
 
   

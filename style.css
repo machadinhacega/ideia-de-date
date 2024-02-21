@@ -4,7 +4,156 @@ html {
 }
 
 
+:root {
+  --dark-color: #1E1E1E;
+  --light-color: #FFFFFF;
+  --green-color: #4EB282;
+  --red-color: #E24646;
+  --purple-color: #7653DC;
+  --blue-color: #1F86A7;
+  --orange-color: #E39012;
+  --bordo-color: #802323;
+  --pink-color: #D937E8;
+  --vinho-color: #6D0863;
+  --yellow-color: #FFE55A;
+  --gray1-color: #272727;
+  --gray2-color: #6D6D6D;
+}
+
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  background-color: var(--dark-color);
+}
+
+.title {
+  margin-left: 6%;
+  margin-top: 30px;
+  width: 80%;
+}
+
+.title h1 {
+  color: var(--light-color);
+  font-size: 1.5rem;
+}
+
+.title p {
+  color: var(--gray2-color);
+  font-size: .8rem;
+}
+
+.categories__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category__container {
+  width: 28%;
+  margin: 4px;
+  border: none;
+  border-radius: 15px;
+}
+
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category__icon__container {
+  background-color: #fff;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 0.20;
+  margin-top: 10px;
+}
+
+.category__icon {
+  width: 40px;
+  margin-top: -50px;
+}
+
+.category__name {
+  color: var(--light-color);
+  font-size: .8rem;
+  margin-top: 20px;
+}
+
+.category__container__disabled{
+  background-color: var(--gray1-color);
+}
+
+.category__container__green {
+  background-color: var(--green-color);
+}
+
+.category__container__red {
+  background-color: var(--red-color);
+}
+
+.category__container__purple {
+  background-color: var(--purple-color);
+}
+
+.category__container__blue {
+  background-color: var(--blue-color);
+}
+
+.category__container__orange {
+  background-color: var(--orange-color);
+}
+
+.category__container__bordo {
+  background-color: var(--bordo-color);
+}
+
+.category__container__pink {
+  background-color: var(--pink-color);
+}
+
+.category__container__vinho {
+  background-color: var(--vinho-color);
+}
+
+
 #sortearButton{
+  border: none;
+  width: 80%;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--yellow-color);
+  margin-top: 40px;
+}
+
+#atividade{
+  color: var(--light-color);
+  text-align: center;
+  margin-top: 30px;
+}
+
+.atividade__empty{
+  font-size: .8rem;
+}
+
+.atividade__selected{
+  font-size: 1.5rem;
+}
+
+/* 
+category__icon__container
+
+category__name
+ */
+
+/* #sortearButton{
   background-color: #ffc107;
   border: none;
   border-radius: 5px;
@@ -15,4 +164,22 @@ html {
 #sortearButton:hover{
   background-color: #000;
   color: #ffc107;
+} */
+
+
+@media (orientation: landscape) {
+  body{
+    display: flex;
+    justify-content: center;
+    
+  }
+  main{
+    width: 30%;  
+  }
+
+  .title{
+    margin-top: 60px;
+  }
+
 }
+
